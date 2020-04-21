@@ -3,15 +3,19 @@ import React, {Component} from 'react';
 
 class Buscador extends Component{
 
+    //crear una variable de referencia
     buscarRef = React.createRef();
     
+    //creamos una funcion para el submit
     obtenerDatos = (e) => {
         e.preventDefault();
-        console.log(this.buscarRef.current.value);
+        //recibimos la funcion enviada por props desde App.js
+        this.props.datoBuscado(this.buscarRef.current.value);
     }
 
     render(){
         return(
+            //onSubmit usamos la funcion creada
             <form onSubmit={this.obtenerDatos}>
                 <div className="row">
                     <div className="form-group col-md-8">
