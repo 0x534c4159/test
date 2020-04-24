@@ -11,6 +11,7 @@ class Buscador extends Component{
         e.preventDefault();
         //recibimos la funcion enviada por props desde App.js
         this.props.datoBuscado(this.buscarRef.current.value);
+       //console.log(this.buscarRef.current.value)
     }
 
     render(){

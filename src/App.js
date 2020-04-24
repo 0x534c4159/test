@@ -6,20 +6,18 @@ class App extends Component {
 
   state = {
     estado: '',
-    imagenes : []
+    imagenes2 : []
   }
 
   consultarApi = () => {
     const url = 'https://pixabay.com/api/?key=16180989-16199bde985cdf91ef1688b67&q=' + this.state.estado;
     fetch(url)
       .then(respuesta => respuesta.json())
-      .then(resultado => this.setState({imagenes : resultado.hits}))
+      .then(resultado => this.setState({ imagenes2 : resultado.hits}))
   }
 
   busquedaDatos = (valor) => {
-    this.setState({estado : valor}, () => {
-      this.consultarApi();
-    })
+    this.setState({estado : valor}, () => {this.consultarApi();} )
   }
 
   render(){
@@ -29,8 +27,9 @@ class App extends Component {
         <p className="lead text-center">Buscador de imagenes de pixabay</p>
         <Buscador datoBuscado={this.busquedaDatos}/>
       </div>
-      <Imagenes resultado = {this.state.imagenes}/>
+      <Imagenes resultado2 = {this.state.imagenes2} />
     </div>
+    
   );
   }
 }
