@@ -5,7 +5,7 @@ import Imagenes from './componentes/Imagenes';
 class App extends Component {
 
   state = {
-    estado: '',
+    estado: ' ',
     imagenes2 : []
   }
 
