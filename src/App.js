@@ -3,7 +3,36 @@ import Buscador from './componentes/Buscador';
 import Imagenes from './componentes/Imagenes';
 
 
+/*
+CICLO DE VIDA DEL COMPONENTE
+- prefijo will o did dependiendo si ocurrio el evento u ocurrirá
+- componentWillMount()
+- componentDidMount()
+- render()
+- componentWillReceiveProps(nextProps)
+- shouldComponentUpdate(nextProps, nextState)
+- componentWillUpdate(nextProps, nextState)
+- componentDidUpdate(prevProps, prevState)
+- componentWillUnmount()
+- componentDidCatch()
+*/
+
+
 class App extends Component {
+
+
+//Forma apropiada de inicializar un componente con un constructor
+/*   
+constructor(props){
+    super(props)
+
+    this.state = {
+      estado: ' ',
+      imagenes : [],
+      pagina: ''
+    }
+    
+  } */
 
   state = {
     estado: ' ',
@@ -56,6 +85,8 @@ class App extends Component {
   render(){
   return (
     <div className="App container">
+      
+
       <div className="jumbotron">
         <p className="lead text-center">Buscador de imagenes de pixabay</p>
         <Buscador datoBuscado={this.busquedaDatos}/>
